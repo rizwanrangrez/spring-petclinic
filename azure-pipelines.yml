@@ -11,6 +11,12 @@ jobs:
     inputs:
       SourceFolder: '$(System.DefaultWorkingDirectory)'
       Contents: '**/target/*.?(war|jar)'
-      TargetFolder: $(Build.ArtifactStagingDirectory)
+      TargetFolder: $(Build.ArtifactStagingDirectory)  
+- deployment: VMDeploy
+  displayName: web
+  environment:
+    name:  Test-spring-petclinic
+    resourceType: VirtualMachine
+    tags: web
   - upload: $(Build.ArtifactStagingDirectory)
     artifact: drop

@@ -21,7 +21,7 @@ jobs:
     resourceType: VirtualMachine
     tags: web
 
-- deployment: VMDeploy
+- deployment: OneTimeVMDeploy
   displayName: web
   pool:
     vmImage: 'Ubuntu-16.04'

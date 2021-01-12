@@ -20,3 +20,16 @@ jobs:
     name:  Test-spring-petclinic
     resourceType: VirtualMachine
     tags: web
+
+- deployment: OneTimeVMDeploy
+  displayName: web
+  pool:
+    vmImage: 'Ubuntu-16.04'
+  environment:
+    name: Test-spring-petclinic
+    resourceType: VirtualMachine
+  strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo my first deployment
